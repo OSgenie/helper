@@ -7,3 +7,4 @@ sudo sed -i 's/#http_proxy = http:\/\/proxy.yoyodyne.com:18023\//#http_proxy = h
 sudo sed -i 's/#ftp_proxy = http:\/\/proxy.yoyodyne.com:18023\//ftp_proxy = http:\/\/$wget_proxy\//g'  /etc/wgetrc
 sudo sed -i 's/#use_proxy = on/use_proxy = on/g' /etc/wgetrc
 }
+configure_wget_proxy
