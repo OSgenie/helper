@@ -1,7 +1,8 @@
 #!/bin/bash
 
 chmod +x *.sh
-git add *.sh *.config
+git add *.sh 
+git add *.config
 if [ ! -z "$1" ]; then
     git commit -m "$1"
 else
