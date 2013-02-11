@@ -3,6 +3,7 @@
 # kirtley@osgenie.com
 if [ $1 == "-h" ]; then
     echo "Description: Installs the basic programs for administering servers and virtual hosts and creates a new ssh key for the console if one doesn't exist. You will still need to ssh-copy-id the key to any servers you want to manage"
+    echo ""
     echo "Usage: ./`basename $0`"
     exit 0
 fi

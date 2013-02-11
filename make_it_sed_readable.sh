@@ -1,6 +1,7 @@
 #!/bin/bash
 if [ $1 == "-h" ]; then
     echo "Description: Rewrites a string adding escape characters in front of characters that need escaping to be used with sed"
+    echo ""
     echo "Usage: ./`basename $0` 'string to be rewritten'"
     exit 0
 fi
