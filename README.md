@@ -3,6 +3,7 @@ helper
 
 ## add-all-sh-git
 Description: Quickly commit modifications to a git repository. Copy it to the root of the working repository to run
+
 Usage: add-all-sh-git 'Commit Message' (defaults to '.' if blank)
 
 ## config_bash.sh
