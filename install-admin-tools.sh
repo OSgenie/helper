@@ -1,7 +1,11 @@
 #!/bin/bash
 # kirtley wienbroer
 # kirtley@osgenie.com
-
+if [ $1 == "-h" ]; then
+    echo "Description: Installs the basic programs for administering servers and virtual hosts and creates a new ssh key for the console if one doesn't exist. You will still need to ssh-copy-id the key to any servers you want to manage"
+    echo "Usage: ./`basename $0`"
+    exit 0
+fi
 function install_packages()
 {
 sudo apt-get install -y build-essential make
@@ -37,20 +41,5 @@ echo "Creating key for $USER@$(hostname -s)"
 ssh-keygen -t rsa -C "$USER@$(hostname -s)"
 }
 
-function copy_ssh_id_to_servers ()
-{
-echo "Assuming that the logged in user is the same name as the server user"
-echo "Type yes when prompted"
-servers=(
-193.168.11.7
-192.168.11.8
-192.168.11.10
-)
-for server in $servers; do
-    ssh-copy-id $server
-done
-}
-
 install_packages
 check_for_ssh_keys
-copy_ssh_id_to_servers

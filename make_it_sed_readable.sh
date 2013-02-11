@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ $1 == "-h" ]; then
+    echo "Description: Rewrites a string adding escape characters in front of characters that need escaping to be used with sed"
+    echo "Usage: ./`basename $0` 'string to be rewritten'"
+    exit 0
+fi
 function make_it_sed_readable ()
 {
 string=$1
@@ -23,6 +28,6 @@ string=$newstring
 echo $string
 }
 
-input=/home/kirtley
+input=$1
 sed_readable=$(make_it_sed_readable $input)
 echo $sed_readable 

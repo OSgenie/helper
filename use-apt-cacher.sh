@@ -1,6 +1,11 @@
 #!/bin/bash
 # Kirtley Wienbroer
 # kirtley@osgenie.com
+if [ $1 == "-h" ]; then
+    echo "Description: Configure apt-get to use an apt-cacher server"
+    echo "Usage: ./`basename $0` <FQDN or IP of apt-cacher server>"
+    exit 0
+fi
 if [ $1 != "" ]; then
     apt_cacher_server=$1
 else

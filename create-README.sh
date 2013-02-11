@@ -1,5 +1,9 @@
 #!/bin/bash
-
+if [ "$1" == "-h" ]; then
+    echo "Description: Generates a README.md from all the help methods in a given repository"
+    echo "Usage: ./`basename $0`"
+    exit 0
+fi
 gitdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 title=$(basename $gitdir)
 scripts=()
@@ -15,11 +19,16 @@ function write_file_descriptions ()
 {
 for ((i=0;i<${#scripts[@]};i++)); do
     echo "" | tee -a README.md
-    echo ${scripts[$i]} | tee -a README.md
-    read -p "Enter a description for ${scripts[$i]}: " description
-    echo "Description: $description" | tee -a README.md
-    read -p "Enter usage scenerio for ${scripts[$i]}: " usage
-    echo "Usage: $usage" | tee -a README.md
+    echo "##" ${scripts[$i]} | tee -a README.md
+        get_help=$(./${scripts[$i]} -h)
+    if [ ! -z "$(./${scripts[$i]} -h)" ]; then
+        ./${scripts[$i]} -h | tee -a README.md
+    else
+        read -p "Enter a description for ${scripts[$i]}: " description
+        echo "Description: $description" | tee -a README.md
+        read -p "Enter usage scenerio for ${scripts[$i]}: " usage
+        echo "Usage: $usage" | tee -a README.md
+    fi
 done
 }
 
