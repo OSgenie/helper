@@ -1,6 +1,7 @@
 #!/bin/bash
 if [ $1 == "-h" ]; then
     echo "Description: Modifies bash history to increase size, ignoredups, and timestamp entries"
+    echo ""
     echo "Usage: ./`basename $0`"
     exit 0
 fi
