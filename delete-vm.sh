@@ -2,7 +2,7 @@
 if [ $1 == "-h" ]; then
     echo "Description: Unregisters and deletes all files for a vm on a kvm host with a default path"
     echo ""
-    echo "Usage: `basename $0` (You'll be presented with a list of all vms on the machine to choose from)"
+    echo "Usage: ./`basename $0` (You'll be presented with a list of all vms on the machine to choose from)"
     exit 0
 fi
 function application_header ()
@@ -31,8 +31,8 @@ sudo rm -rfv /var/lib/libvirt/images/$vm2delete*
 application_header
 list_vms
 if [ "$correct" = "yes" ]; then
-remove_vm
-echo "$vm2delete has been deleted."
+    remove_vm
+    echo "$vm2delete has been deleted."
 else
-echo "$vm2delete was not deleted."
+    echo "$vm2delete was not deleted."
 fi

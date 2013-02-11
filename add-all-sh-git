@@ -1,7 +1,13 @@
 #!/bin/bash
-
+if [ "$1" == "-h" ]; then
+    echo "Description: Quickly commit modifications to a git repository. Copy it to the root of the working repository to run"
+    echo ""
+    echo "Usage: ./`basename $0` 'Commit Message' (defaults to '.' if blank)"
+    exit 0
+fi
 chmod +x *.sh
-git add *.sh 
+git add *.md
+git add *.sh
 git add *.config
 if [ ! -z "$1" ]; then
     git commit -m "$1"
