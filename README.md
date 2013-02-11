@@ -52,4 +52,5 @@ Usage: ./use-apt-cacher.sh <FQDN or IP of apt-cacher server>
 
 ## use-wget-proxy.sh
 Description: Configure wget to use a proxy
+
 Usage: ./use-wget-proxy.sh <FQDN or IP of proxy server>:<port> 

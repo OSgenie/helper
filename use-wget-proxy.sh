@@ -1,6 +1,7 @@
 #!/bin/bash
 if [ $1 == "-h" ]; then
     echo "Description: Configure wget to use a proxy"
+    echo ""
     echo "Usage: ./`basename $0` <FQDN or IP of proxy server>:<port> "
     exit 0
 fi
