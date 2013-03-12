@@ -6,6 +6,8 @@ if [ "$1" == "-h" ]; then
     exit 0
 fi
 chmod +x *.sh
+git add LICENSE
+git add gpl.txt
 git add *.md
 git add *.sh
 git add *.config
